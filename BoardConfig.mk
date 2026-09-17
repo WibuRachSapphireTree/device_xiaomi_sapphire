@@ -10,9 +10,6 @@ include vendor/xiaomi/sapphire/BoardConfigVendor.mk
 DEVICE_PATH := device/xiaomi/sapphire
 KERNEL_PATH := $(DEVICE_PATH)-kernel
 
-# Inherit from proprietary files for miuicamera
--include device/xiaomi/miuicamera-sapphire/BoardConfig.mk
-
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 BUILD_BROKEN_INCORRECT_PARTITION_IMAGES := true
