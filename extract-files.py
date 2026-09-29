@@ -67,6 +67,10 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libprocessgroup_shim.so'),
     'vendor/etc/init/android.hardware.gnss-aidl-service-qti.rc': blob_fixup()
         .regex_replace('group system gps radio vendor_qti_diag vendor_ssgtzd', 'group system gps radio vendor_qti_diag'),
+    'vendor/etc/init/vendor.sensors.sscrpcd.rc': blob_fixup()
+        .regex_replace('class early_hal', 'disabled'),
+    'vendor/etc/init/vendor.sensors.qti.rc': blob_fixup()
+        .regex_replace('class core', 'disabled'),
     'vendor/etc/vintf/manifest/c2_manifest_vendor.xml': blob_fixup()
         .regex_replace('.+DOLBY.+\n', ''),
     'vendor/bin/STFlashTool': blob_fixup()

@@ -1,0 +1,22 @@
+service vendor.adsp-wait /vendor/bin/vendor.adsp-wait.sh
+    user root
+    group root
+    seclabel u:r:vendor_qti_init_shell:s0
+    oneshot
+
+on boot
+    start vendor.adsp-wait
+
+on property:init.svc.vendor.adsp-wait=stopped
+    start vendor.sensors
+    start vendor.sensors.qti
+    start vendor.sensors-hal-multihal
+
+service vendor.sensors-hal-multihal /vendor/bin/hw/android.hardware.sensors-service.xiaomi-multihal
+    override
+    disabled
+    user system
+    group system wakelock context_hub input uhid
+    task_profiles ServiceCapacityLow
+    capabilities BLOCK_SUSPEND
+    rlimit rtprio 10 10

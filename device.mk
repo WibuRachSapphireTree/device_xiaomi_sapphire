@@ -668,3 +668,8 @@ PRODUCT_PACKAGES += \
     firmware_WCNSS_qcom_cfg.ini_symlink \
     firmware_wlanmdsp.mbn_symlink
     
+
+# Sensors: start HAL only after ADSP is up
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sensors/init.sensors-wait.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.sensors-wait.rc \
+    $(LOCAL_PATH)/configs/sensors/vendor.adsp-wait.sh:$(TARGET_COPY_OUT_VENDOR)/bin/vendor.adsp-wait.sh
