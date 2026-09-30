@@ -21,3 +21,5 @@ type sysfs_power_supply, fs_type, sysfs_type;
 
 type proc_net_local_unbindable_ports, fs_type, proc_type;
 
+type miev_device, dev_type;
+
