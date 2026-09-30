@@ -56,4 +56,5 @@
 
 /sys/class/wakeup(/.*)?          u:object_r:sysfs_wakeup:s0
 /sys/devices/.*wakeup/.* u:object_r:sysfs_wakeup:s0
+/sys/devices/.*/wakeup[0-9]+(/.*)? u:object_r:sysfs_wakeup:s0
 /(vendor|system/vendor)/bin/vendor\.adsp-wait\.sh  u:object_r:vendor_qti_init_shell_exec:s0
