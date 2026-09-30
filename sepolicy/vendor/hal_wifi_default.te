@@ -1,2 +1,5 @@
 # Allow WiFi to load kernel modules
 allow hal_wifi_default self:capability sys_module;
+
+# Allow WiFi HAL to read vendor debug wifi property on user builds
+get_prop(hal_wifi_default, persist_vendor_debug_wifi_prop)
