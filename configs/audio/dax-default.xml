@@ -28,6 +28,32 @@
       </ieq-bands>
     </data>
   </preset>
+  <preset id="ieq_speaker" type="ieq">
+    <data>
+      <ieq-bands>
+        <band_ieq frequency="47" target="185"/>
+        <band_ieq frequency="141" target="195"/>
+        <band_ieq frequency="234" target="200"/>
+        <band_ieq frequency="328" target="195"/>
+        <band_ieq frequency="469" target="190"/>
+        <band_ieq frequency="656" target="188"/>
+        <band_ieq frequency="844" target="192"/>
+        <band_ieq frequency="1031" target="195"/>
+        <band_ieq frequency="1313" target="210"/>
+        <band_ieq frequency="1688" target="222"/>
+        <band_ieq frequency="2250" target="228"/>
+        <band_ieq frequency="3000" target="220"/>
+        <band_ieq frequency="3750" target="205"/>
+        <band_ieq frequency="4688" target="172"/>
+        <band_ieq frequency="5813" target="148"/>
+        <band_ieq frequency="7125" target="110"/>
+        <band_ieq frequency="9000" target="80"/>
+        <band_ieq frequency="11250" target="22"/>
+        <band_ieq frequency="13875" target="-90"/>
+        <band_ieq frequency="19688" target="-283"/>
+      </ieq-bands>
+    </data>
+  </preset>
   <preset id="ieq_detailed" type="ieq">
     <data>
       <ieq-bands>
@@ -299,12 +325,12 @@
       <reverb-suppression-enable value="false"/>
       <reverb-suppression-amount value="0"/>
       <endpoint_type id="speaker">
-        <include preset="ieq_balanced"/>
+        <include preset="ieq_speaker"/>
         <ieq-amount value="6"/>
         <ieq-enable value="true"/>
         <calibration-boost value="0"/>
-        <dialog-enhancer-enable value="true"/>
-        <dialog-enhancer-amount value="4"/>
+        <dialog-enhancer-enable value="false"/>
+        <dialog-enhancer-amount value="6"/>
         <dialog-enhancer-ducking value="0"/>
         <mi-virtualizer-binaural-steering-enable value="false"/>
         <peak-value value="256"/>
@@ -316,7 +342,7 @@
         <volume-leveler-in-target value="-256"/>
         <volume-leveler-out-target value="-256"/>
         <graphic-equalizer-enable value="true"/>
-        <virtualizer-enable value="true"/>
+        <virtualizer-enable value="false"/>
         <bass-enhancer-enable value="true"/>
         <virtual-bass-process-enable value="true"/>
         <hearing-protection-enable value="false"/>
@@ -497,7 +523,7 @@
       <reverb-suppression-enable value="false"/>
       <reverb-suppression-amount value="0"/>
       <endpoint_type id="speaker">
-        <include preset="ieq_balanced"/>
+        <include preset="ieq_speaker"/>
         <ieq-amount value="6"/>
         <ieq-enable value="true"/>
         <calibration-boost value="0"/>
@@ -514,7 +540,7 @@
         <volume-leveler-in-target value="-256"/>
         <volume-leveler-out-target value="-256"/>
         <graphic-equalizer-enable value="true"/>
-        <virtualizer-enable value="true"/>
+        <virtualizer-enable value="false"/>
         <bass-enhancer-enable value="true"/>
         <virtual-bass-process-enable value="true"/>
         <hearing-protection-enable value="false"/>
