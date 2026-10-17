@@ -25,3 +25,6 @@ allow vendor_qti_init_shell configfs:{
   file
   lnk_file
 } create_file_perms;
+
+# Bluetooth MAC properties
+set_prop(vendor_init, vendor_btmac_prop)
