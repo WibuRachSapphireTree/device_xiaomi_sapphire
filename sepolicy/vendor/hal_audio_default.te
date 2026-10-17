@@ -1,1 +1,4 @@
 allow hal_audio_default debugfs:dir read;
+
+# Allow audio HAL to write to pipes passed by apps (dump/log fds)
+allow hal_audio_default untrusted_app_all:fifo_file write;
