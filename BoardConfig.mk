@@ -143,6 +143,7 @@ BOARD_KERNEL_CMDLINE := \
     disable_dma32=on \
     rcu_nocbs=all \
     qcom_geni_serial.con_enabled=0 \
+    rcutree.enable_rcu_lazy=1 \
     bootinfo.fingerprint=$(LINEAGE_VERSION) \
     swinfo.fingerprint=$(LINEAGE_VERSION)
 
