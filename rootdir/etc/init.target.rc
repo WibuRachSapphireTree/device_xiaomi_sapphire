@@ -180,8 +180,6 @@ on post-fs-data
     chmod 0666 /data/vendor/camera/ultra_w[3264]_h[2448].NV12
 # Create miui dualcam calibration file --qiankaifeng-20221117 end
 
-#start tombstones/modem
-mkdir /data/tombstones/modem 0771 system system encryption=Require
 
 on early-boot
     start vendor.sensors

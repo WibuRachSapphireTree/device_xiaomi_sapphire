@@ -29,5 +29,3 @@ allow vendor_qti_init_shell configfs:{
 # Bluetooth MAC properties
 set_prop(vendor_init, vendor_btmac_prop)
 
-# Create /data/tombstones/modem at post-fs-data
-allow vendor_init tombstone_data_file:dir create_dir_perms;
