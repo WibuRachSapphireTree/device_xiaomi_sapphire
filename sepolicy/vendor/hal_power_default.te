@@ -24,5 +24,5 @@ allow hal_power_default {
 } rw_file_perms;
 
 # Allow Power HAL to query Qualcomm display config HAL
-allow hal_power_default vendor_hal_vnddisplayconfig_service:service_manager find;
+hal_client_domain(hal_power_default, hal_graphics_composer)
 binder_call(hal_power_default, hal_graphics_composer_default)
