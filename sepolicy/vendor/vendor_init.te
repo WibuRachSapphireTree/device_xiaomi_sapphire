@@ -29,3 +29,6 @@ allow vendor_qti_init_shell configfs:{
 # Bluetooth MAC properties
 set_prop(vendor_init, vendor_btmac_prop)
 
+# SoC name property
+set_prop(vendor_init, vendor_soc_name_prop)
+
