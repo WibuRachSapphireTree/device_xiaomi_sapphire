@@ -10,4 +10,6 @@ allow system_server lineage_health_service:service_manager find;
 
 allow system_server zygote_tmpfs:file write;
 
-
+# Allow system_server to read vendor default props
+# Fixes: avc denied { read } for comm="system_server" tcontext=vendor_default_prop
+get_prop(system_server, vendor_default_prop)
