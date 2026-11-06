@@ -1,7 +1,3 @@
 vendor.qti.ims.factoryaidlservice.IImsFactory/default  u:object_r:vendor_hal_factory_aidlservice:s0
 # DPM AIDL Service
 vendor.qti.hardware.dpmaidlservice.IDpmService/default               u:object_r:hal_dpm_aidl_service:s0
-
-# QTI Power-off Alarm service
-# Fixes: avc denied { find } for vendor_qti_poweroffalarm_app tcontext=default_android_service
-vendor.qti.hardware.alarm.IAlarm/default                             u:object_r:vendor_qti_alarm_service:s0
