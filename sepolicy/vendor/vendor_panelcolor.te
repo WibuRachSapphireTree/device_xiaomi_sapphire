@@ -5,3 +5,8 @@ init_daemon_domain(vendor_panelcolor)
 
 # Touch panel lockdown info
 allow vendor_panelcolor proc_tp_lockdown:file r_file_perms;
+
+# Allow panelcolor_bin to connect to property service socket
+# Fixes: avc denied { write } for comm="panelcolor_bin" tcontext=property_socket
+allow vendor_panelcolor property_socket:sock_file write;
+allow vendor_panelcolor init:unix_stream_socket connectto;
