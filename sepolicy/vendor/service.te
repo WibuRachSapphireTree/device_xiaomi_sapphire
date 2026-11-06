@@ -7,3 +7,7 @@ type hal_dpm_aidl_service, service_manager_type, hal_service_type;
 
 # LineageOS health services  
 type lineage_health_service, service_manager_type;
+
+# QTI Power-off Alarm AIDL service
+# Fixes: avc denied { find } for vendor_qti_poweroffalarm_app tcontext=default_android_service
+type vendor_qti_alarm_service, service_manager_type, hal_service_type;
