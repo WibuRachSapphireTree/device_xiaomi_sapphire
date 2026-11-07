@@ -525,8 +525,7 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.voice-V1-ndk.vendor \
     libprotobuf-cpp-full-3.9.1-vendorcompat \
     libprotobuf-cpp-lite-3.9.1-vendorcompat \
-    librmnetctl \
-    libsqlite.vendor
+    librmnetctl
 
 # Sensors
 PRODUCT_PACKAGES += \
@@ -556,9 +555,7 @@ PRODUCT_PACKAGES += \
     libhidlbase_shim
 
 # Shipping API
-BOARD_SHIPPING_API_LEVEL := 33
-SHIPPING_API_LEVEL := $(BOARD_API_LEVEL)
-PRODUCT_SHIPPING_API_LEVEL := $(BOARD_SHIPPING_API_LEVEL)
+PRODUCT_SHIPPING_API_LEVEL := 33
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
