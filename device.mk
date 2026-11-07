@@ -245,8 +245,7 @@ PRODUCT_PACKAGES += \
 
 # Fastbootd
 PRODUCT_PACKAGES += \
-    android.hardware.fastboot-service.example_recovery \
-    fastbootd
+    android.hardware.fastboot-service.example_recovery
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -364,7 +363,7 @@ PRODUCT_COPY_FILES += \
 
 # Kernel
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
-PRODUCT_ENABLE_UFFD_GC := true
+
 
 # Keymaster
 PRODUCT_PACKAGES += \
