@@ -57,13 +57,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.dsi.ant@1.0.vendor
 
-# Memory Configuration
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.low_ram=false
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.surface_flinger.game_default_frame_rate_override=120
-
 # Audio
 $(call soong_config_set, android_hardware_audio, run_64bit, true)
 
