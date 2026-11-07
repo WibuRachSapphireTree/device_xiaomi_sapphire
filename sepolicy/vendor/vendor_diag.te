@@ -1,8 +1,5 @@
 # Domain for diag-router service
 # Fixes: diag-router has no domain transition from init
 # avc: denied (no domain transition from u:r:init:s0)
-type vendor_diag, domain;
-type vendor_diag_exec, exec_type, vendor_file_type, file_type;
-
 init_daemon_domain(vendor_diag)
 
