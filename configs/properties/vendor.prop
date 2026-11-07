@@ -163,7 +163,6 @@ drm.service.enabled=true
 debug.renderengine.blur_algorithm=kawase2
 debug.mdpcomp.logs=0
 debug.sf.enable_hwc_vds=0
-debug.sf.latch_unsignaled=0
 debug.sf.auto_latch_unsignaled=1
 debug.sf.enable_transaction_tracing=false
 debug.sf.defer_refresh_rate_when_off=1

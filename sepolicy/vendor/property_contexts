@@ -24,6 +24,9 @@ ro.telephony.sim_slots.count                 u:object_r:radio_prop:s0
 
 ro.vendor.camera.res.fmq.size  u:object_r:vendor_camera_res_prop:s0
 
+RUNTIME_OVERRIDE_OPENCL_MEM_TYPE    u:object_r:exported_system_prop:s0
+RUNTIME_OVERRIDE_LOG_LEVEL          u:object_r:exported_system_prop:s0
+
 # Bluetooth
 ro.ril.oem.btmac         u:object_r:vendor_btmac_prop:s0
 persist.ro.ril.oem.btmac u:object_r:vendor_btmac_prop:s0
