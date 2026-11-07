@@ -1,2 +1,6 @@
 get_prop({ appdomain -isolated_app_all }, vendor_fp_prop)
 get_prop({ appdomain -isolated_app_all }, vendor_tee_listener_prop)
+
+# Allow PowerOffAlarm app to find alarm service
+allow { platform_app vendor_qti_poweroffalarm_app } vendor_hal_alarm_qti_aidl_service:service_manager find;
+
