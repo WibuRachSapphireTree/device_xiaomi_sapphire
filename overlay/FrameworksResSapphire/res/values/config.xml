@@ -355,22 +355,6 @@
         <!-- Nominal White Z --> <item>1.089058</item>
     </string-array>
     
-    <!-- Array of output values for LCD backlight corresponding to the lux values
-         in the config_autoBrightnessLevels array.  This array should have size one greater
-         than the size of the config_autoBrightnessLevels array.
-         The brightness values must be between 0 and 255 and be non-decreasing.
-         This must be overridden in platform specific overlays -->
-    <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>10</item>
-        <item>20</item>
-        <item>40</item>
-        <item>70</item>
-        <item>110</item>
-        <item>160</item>
-        <item>200</item>
-        <item>255</item>
-    </integer-array>
-
     <!-- Array of ambient lux threshold values. This is used for determining hysteresis constraint
          values by calculating the index to use for lookup and then setting the constraint value
          to the corresponding value of the array. The new brightening hysteresis constraint value
