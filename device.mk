@@ -509,6 +509,8 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.voice-V1-ndk.vendor \
     libprotobuf-cpp-full-3.9.1-vendorcompat \
     libprotobuf-cpp-lite-3.9.1-vendorcompat \
+    libprotobuf-cpp-full-3.9.1-vendorcompat.vendor \
+    libprotobuf-cpp-lite-3.9.1-vendorcompat.vendor \
     librmnetctl
 
 # Sensors
