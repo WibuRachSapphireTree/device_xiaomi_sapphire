@@ -142,9 +142,8 @@ BOARD_KERNEL_CMDLINE := \
     kasan=off \
     disable_dma32=on \
     rcu_nocbs=all \
-    rcu_normal=1 \
-    rcu_expedited=1 \
     qcom_geni_serial.con_enabled=0 \
+    rcutree.enable_rcu_lazy=1 \
     bootinfo.fingerprint=$(LINEAGE_VERSION) \
     swinfo.fingerprint=$(LINEAGE_VERSION)
 
