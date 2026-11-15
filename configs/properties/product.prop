@@ -1,6 +1,9 @@
 # App
 ro.launcher.blur.appLaunch=0
 
+# Memory
+ro.config.low_ram=false
+
 # Audio
 af.fast_track_multiplier=1
 audio.deep_buffer.media=true
