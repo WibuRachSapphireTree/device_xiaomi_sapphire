@@ -147,8 +147,8 @@ BOARD_KERNEL_CMDLINE := \
     rcu_nocbs=all \
     qcom_geni_serial.con_enabled=0 \
     rcutree.enable_rcu_lazy=1 \
-    bootinfo.fingerprint=$(LINEAGE_VERSION) \
-    swinfo.fingerprint=$(LINEAGE_VERSION)
+    bootinfo.fingerprint=$(VOLTAGE_VERSION) \
+    swinfo.fingerprint=$(VOLTAGE_VERSION)
 
 # Kernel prebuilt
 TARGET_KERNEL_ARCH := arm64
@@ -191,7 +191,7 @@ TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 
--include vendor/lineage/config/BoardConfigReservedSize.mk
+-include vendor/voltage/config/BoardConfigReservedSize.mk
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
@@ -224,7 +224,8 @@ BOOT_SECURITY_PATCH := 2026-08-01
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
 # Sepolicy
-include device/qcom/sepolicy_vndr/SEPolicy.mk
+include device/qcom/sepolicy_vndr/sm6225/SEPolicy.mk
+-include device/voltage/sepolicy/qcom/sepolicy.mk
 include device/xiaomi/sepolicy/SEPolicy.mk
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
