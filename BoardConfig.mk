@@ -224,7 +224,7 @@ BOOT_SECURITY_PATCH := 2026-08-01
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
 # Sepolicy
-include device/qcom/sepolicy_vndr/sm6225/SEPolicy.mk
+include device/qcom/sepolicy_vndr/SEPolicy.mk
 -include device/voltage/sepolicy/qcom/sepolicy.mk
 include device/xiaomi/sepolicy/SEPolicy.mk
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
