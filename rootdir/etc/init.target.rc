@@ -294,16 +294,6 @@ on property:sys.shutdown.requested=*
 	on property:sys.tp.grip_enable=270
 	write /proc/tp_grip_area 270
 
-service dcvs-sh /vendor/bin/init.qti.dcvs.sh
-    class late_start
-    user root
-    group root system
-    disabled
-    oneshot
-
-on property:vendor.dcvs.prop=1
-    start dcvs-sh
-
 #display start
 service displayfeature /vendor/bin/displayfeature
     class late_start
