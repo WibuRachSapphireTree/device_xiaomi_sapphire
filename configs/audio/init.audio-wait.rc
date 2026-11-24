@@ -1,0 +1,33 @@
+# The ADSP is booted at early-boot, a few ms before class hal starts the audio
+# HAL, and its firmware is loaded by ueventd behind the modem/CDSP/GPU images,
+# so it can take 7 s or more to come up. AGM gives the DSP about 7 s in
+# gsl_init(); when that runs out AGM init fails, IAGM is never registered and
+# the HAL blocks forever in getService(IAGM). audioserver and then
+# system_server block behind it until the watchdog restarts system_server.
+# Start the HAL only once the ADSP is running; AGM still waits for the DSP
+# services on its own from there.
+service vendor.audio-adsp-wait /vendor/bin/vendor.adsp-wait.sh 0
+    user root
+    group root
+    seclabel u:r:vendor_qti_init_shell:s0
+    oneshot
+
+on boot
+    start vendor.audio-adsp-wait
+
+on property:init.svc.vendor.audio-adsp-wait=stopped
+    start vendor.audio-hal
+
+service vendor.audio-hal /vendor/bin/hw/android.hardware.audio.service
+    override
+    class hal
+    disabled
+    user audioserver
+    # media gid needed for /dev/fm (radio) and for /data/misc/media (tee)
+    group audio camera drmrpc inet media mediadrm net_bt net_bt_admin net_bw_acct wakelock context_hub system
+    capabilities BLOCK_SUSPEND SYS_NICE
+    # setting RLIMIT_RTPRIO allows binder RT priority inheritance
+    rlimit rtprio 10 10
+    ioprio rt 4
+    task_profiles ProcessCapacityHigh HighPerformance
+    onrestart restart audioserver
