@@ -15,6 +15,25 @@ on post-fs-data
     mkdir /mnt/vendor/persist/goodix 0770 system system
     mkdir /mnt/vendor/persist/fpc 0770 system system
 
+# Audio on the gold cores, as on HyperOS.
+#
+# init.target.rc gives the audio-app cpuset cores 4-7 on boot, but HyperOS
+# creates that cpuset and moves the audio services into it itself; AOSP does
+# neither. Left on the silver cores, the audio HAL's writer and Dolby threads
+# sometimes stall for 6-8 ms, longer than a fast mixer period (5 ms), and the
+# sound crackles in games and when notifications pile up. On the gold cores
+# the longest mix cycle measured was 6 ms with no underruns.
+on init
+    mkdir /dev/cpuset/audio-app
+    copy /dev/cpuset/mems /dev/cpuset/audio-app/mems
+    write /dev/cpuset/audio-app/cpus 4-7
+
+on property:init.svc.audioserver=running
+    write /dev/cpuset/audio-app/cgroup.procs ${init.svc_debug_pid.audioserver}
+
+on property:init.svc.vendor.audio-hal=running
+    write /dev/cpuset/audio-app/cgroup.procs ${init.svc_debug_pid.vendor.audio-hal}
+
 # For the NFC variant (sapphiren)
 on post-fs && property:ro.boot.hwname=sapphiren
     start stflashtool
