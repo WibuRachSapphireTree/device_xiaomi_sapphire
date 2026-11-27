@@ -86,7 +86,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
     $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/audio_policy_configuration.xml \
     $(LOCAL_PATH)/configs/audio/kvh2xml.xml:$(TARGET_COPY_OUT_VENDOR)/etc/kvh2xml.xml \
-    $(LOCAL_PATH)/configs/audio/init.audio-wait.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.audio-wait.rc
+    $(LOCAL_PATH)/configs/audio/init.audio-wait.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.audio-wait.rc \
+    $(LOCAL_PATH)/configs/audio/init.audio-cpuset.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.audio-cpuset.rc
 
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \

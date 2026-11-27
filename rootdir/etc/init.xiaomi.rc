@@ -23,16 +23,14 @@ on post-fs-data
 # sometimes stall for 6-8 ms, longer than a fast mixer period (5 ms), and the
 # sound crackles in games and when notifications pile up. On the gold cores
 # the longest mix cycle measured was 6 ms with no underruns.
+#
+# Both services are moved in configs/audio/init.audio-cpuset.rc (system_ext)
+# because vendor_init cannot read init_service_status_private_prop or
+# init_svc_debug_prop.
 on init
     mkdir /dev/cpuset/audio-app
     copy /dev/cpuset/mems /dev/cpuset/audio-app/mems
     write /dev/cpuset/audio-app/cpus 4-7
-
-on property:init.svc.audioserver=running
-    write /dev/cpuset/audio-app/cgroup.procs ${init.svc_debug_pid.audioserver}
-
-on property:init.svc.vendor.audio-hal=running
-    write /dev/cpuset/audio-app/cgroup.procs ${init.svc_debug_pid.vendor.audio-hal}
 
 # For the NFC variant (sapphiren)
 on post-fs && property:ro.boot.hwname=sapphiren

@@ -1,0 +1,9 @@
+# Move audioserver and vendor.audio-hal into the audio-app cpuset (gold
+# cores 4-7) from system_ext init so vendor_init does not trip SELinux
+# denials on init_service_status_private_prop / init_svc_debug_prop, and so
+# this runs after service task_profiles (ProcessCapacityHigh -> foreground).
+on property:init.svc.audioserver=running
+    write /dev/cpuset/audio-app/cgroup.procs ${init.svc_debug_pid.audioserver}
+
+on property:init.svc.vendor.audio-hal=running
+    write /dev/cpuset/audio-app/cgroup.procs ${init.svc_debug_pid.vendor.audio-hal}
