@@ -433,8 +433,10 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_PACKAGES += \
     ApertureResSapphire \
     CarrierConfigResCommon \
+    ConnectivityResSapphire \
     FrameworksResCommon \
     FrameworksResTarget \
+    SapphireNcmTetheringOverlay \
     SystemUIResCommon \
     TelecommResCommon \
     TelephonyResCommon \
