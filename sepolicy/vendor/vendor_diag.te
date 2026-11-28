@@ -11,3 +11,6 @@ allow vendor_diag self:netlink_kobject_uevent_socket create_socket_perms_no_ioct
 allow vendor_diag functionfs:dir r_dir_perms;
 allow vendor_diag self:qipcrtr_socket create_socket_perms_no_ioctl;
 
+# Allow diag-router to read hwservicemanager readiness/disabled props
+get_prop(vendor_diag, hwservicemanager_prop)
+

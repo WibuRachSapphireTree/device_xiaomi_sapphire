@@ -1,0 +1,2 @@
+# Allow sensors HAL to connect to diag-router abstract unix stream socket
+allow hal_sensors_default vendor_diag:unix_stream_socket connectto;
